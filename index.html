@@ -2,7 +2,7 @@
 <style>
 :root{color-scheme:dark}
 body{background:#141519;color:#fff;font:15px/1.55 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;padding:32px 20px}
-.wrap{max-width:900px;margin:0 auto}
+.wrap{max-width:900px;margin:0 auto;position:relative}
 h1{font-size:24px;margin:0 0 2px;letter-spacing:-.02em}
 .sub{color:#c3c2b7;font-size:13.5px;margin-bottom:22px}
 .prog{height:8px;background:#24262b;border-radius:99px;margin:14px 0 6px;overflow:hidden}
@@ -42,10 +42,46 @@ tr.tot td:first-child{border-left:2px solid #3a3d45} tr.tot td:last-child{border
 .ax{font-size:11px;fill:#8a8878}
 .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#c3c2b7;margin-top:4px}
 .foot{color:#8a8878;font-size:12.5px;line-height:1.6;margin-top:8px}
+.tbtn{position:absolute;top:0;right:0;background:none;border:1px solid #2c2e33;color:#c3c2b7;font-size:12.5px;font-family:inherit;letter-spacing:.05em;padding:5px 12px;border-radius:99px;cursor:pointer}
+html.light{color-scheme:light}
+html.light body{background:#f2f1ec;color:#1a1a19}
+html.light .tbtn{border-color:#ccc9be;color:#6f6d5f}
+html.light .sub,html.light .plabel,html.light .legend{color:#6f6d5f}
+html.light .prog,html.light .bar{background:#e3e1d8}
+html.light .tile,html.light .panel{background:#fff;border-color:#ddd9cf}
+html.light .tile .k{color:#6f6d5f}
+html.light h2{color:#33352f}
+html.light th{color:#6f6d5f;border-bottom-color:#ddd9cf}
+html.light td{border-bottom-color:#eceae2}
+html.light .role,html.light .ci,html.light .muted,html.light .foot{color:#6f6d5f}
+html.light .pos{color:#0f8a5f}
+html.light .neg{color:#d33b41}
+html.light th.hl,html.light td.hl{background:#eef0f4;border-color:#b8bcc6}
+html.light tr.trt td{background:#e8e6dd;border-top-color:#c9c6ba}
+html.light tr.ctl td{background:#f0efe9;color:#6f6d5f}
+html.light tr.tot td{background:#e8e6dd;border-color:#c9c6ba}
+html.light .bemark{background:#6f6d5f}
+html.light .chip.good{background:rgba(15,138,95,.12);color:#0f8a5f}
+html.light .chip.warn{background:rgba(178,116,0,.14);color:#8a6100}
+html.light .chip.bad{background:rgba(211,59,65,.12);color:#d33b41}
+html.light .flag.good{background:rgba(15,138,95,.10);color:#0f8a5f}
+html.light .flag.bad{background:rgba(211,59,65,.10);color:#d33b41}
+html.light .ax{fill:#6f6d5f}
+html.light [stroke="#2c2e33"]{stroke:#d9d6cb}
+html.light [stroke="#24262b"]{stroke:#e6e4da}
+html.light [stroke="#1a1a19"]{stroke:#fff}
+html.light [stroke="#1c1e23"]{stroke:#fff}
+html.light [fill="#e8e6df"]{fill:#1a1a19}
 </style>
 <div class="wrap">
+<button class="tbtn" id="themeBtn" onclick="tgTheme()">☀ LIGHT</button>
+<script>
+function _th(l){document.documentElement.classList.toggle('light',l);document.getElementById('themeBtn').textContent=l?'☾ DARK':'☀ LIGHT';try{localStorage.setItem('fr-theme',l?'light':'dark')}catch(e){}}
+function tgTheme(){_th(!document.documentElement.classList.contains('light'))}
+try{_th(localStorage.getItem('fr-theme')==='light')}catch(e){}
+</script>
 <h1>FORWARD REPORT</h1>
-<div class="sub">Four frozen candidates · scored daily on identical windows · generated 2026-08-25 07:57 UTC</div>
+<div class="sub">Four frozen candidates · scored daily on identical windows · generated 2026-08-25 08:00 UTC</div>
 <div class="prog"><div></div></div>
 <div class="plabel">Clean day <b>6</b> of ~29 · decision ≈ Sep 17</div>
 <div class="tiles">
